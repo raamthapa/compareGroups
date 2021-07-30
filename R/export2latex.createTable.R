@@ -131,8 +131,8 @@ export2latex.createTable<-function(x, file, which.table='descr', size='same', nm
       nmax.pos<-!trim(table1[2,])==''    
   
     rownames(table1)<-gsub("\\$","\\\\$",rownames(table1))
-    rownames(table1)<-sub("%","\\\\%",rownames(table1))  
-    rownames(table1)<-sub("&","\\\\&",rownames(table1))  
+    rownames(table1)<-gsub("%","\\\\%",rownames(table1))  
+    rownames(table1)<-gsub("&","\\\\&",rownames(table1))  
     rownames(table1)<-gsub("_","\\\\_",rownames(table1))
     rownames(table1)<-gsub(">=","$\\\\geq$",rownames(table1))
     rownames(table1)<-gsub("<=","$\\\\leq$",rownames(table1))
@@ -225,16 +225,16 @@ export2latex.createTable<-function(x, file, which.table='descr', size='same', nm
 
     table2<-prepare(x,nmax=nmax,c())[[2]]
     rownames(table2)<-gsub("\\$","\\\\$",rownames(table2))
-    rownames(table2)<-sub("%","\\\\%",rownames(table2))  
-    rownames(table2)<-sub("&","\\\\&",rownames(table2))  
+    rownames(table2)<-gsub("%","\\\\%",rownames(table2))  
+    rownames(table2)<-gsub("&","\\\\&",rownames(table2))  
     rownames(table2)<-gsub("_","\\\\_",rownames(table2))
     rownames(table2)<-gsub(">=","$\\\\geq$",rownames(table2))
     rownames(table2)<-gsub("<=","$\\\\leq$",rownames(table2))
     rownames(table2)<-gsub(">","$>$",rownames(table2))
     rownames(table2)<-gsub("<","$<$",rownames(table2))    
     colnames(table2)<-gsub("\\$","\\\\$",colnames(table2))
-    colnames(table2)<-sub("%","\\\\%",colnames(table2))  
-    colnames(table2)<-sub("&","\\\\&",colnames(table2))  
+    colnames(table2)<-gsub("%","\\\\%",colnames(table2))  
+    colnames(table2)<-gsub("&","\\\\&",colnames(table2))  
     colnames(table2)<-gsub("_","\\\\_",colnames(table2))
     colnames(table2)<-gsub(">=","$\\\\geq$",colnames(table2))
     colnames(table2)<-gsub("<=","$\\\\leq$",colnames(table2))

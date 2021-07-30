@@ -139,8 +139,8 @@ export2latex.cbind.createTable<-function(x, file, which.table='descr', size='sam
     }  
     
     rownames(desc)<-gsub("\\$","\\\\$",rownames(desc))
-    rownames(desc)<-sub("%","\\\\%",rownames(desc))  
-    rownames(desc)<-sub("&","\\\\&",rownames(desc))  
+    rownames(desc)<-gsub("%","\\\\%",rownames(desc))  
+    rownames(desc)<-gsub("&","\\\\&",rownames(desc))  
     rownames(desc)<-gsub("_","\\\\_",rownames(desc))
     rownames(desc)<-gsub(">=","$\\\\geq$",rownames(desc))
     rownames(desc)<-gsub("<=","$\\\\leq$",rownames(desc))
@@ -245,8 +245,8 @@ export2latex.cbind.createTable<-function(x, file, which.table='descr', size='sam
 
     avail<-aux.avail[,-ncol(aux.avail),drop=FALSE]  
     rownames(avail)<-gsub("\\$","\\\\$",rownames(avail))
-    rownames(avail)<-sub("%","\\\\%",rownames(avail))  
-    rownames(avail)<-sub("&","\\\\&",rownames(avail))  
+    rownames(avail)<-gsub("%","\\\\%",rownames(avail))  
+    rownames(avail)<-gsub("&","\\\\&",rownames(avail))  
     rownames(avail)<-gsub("_","\\\\_",rownames(avail))
     rownames(avail)<-gsub(">=","$\\\\geq$",rownames(avail))
     rownames(avail)<-gsub("<=","$\\\\leq$",rownames(avail))
